@@ -2,9 +2,9 @@ require 'yaml'
 
 desc 'Checks everything'
 task :check do
-  #Rake::Task['tasks:01'].invoke
+  Rake::Task['tasks:01'].invoke
   #Rake::Task['tasks:02'].invoke
-  Rake::Task['tasks:03'].invoke
+  #Rake::Task['tasks:03'].invoke
 end
 
 desc 'Starts watchr'
@@ -13,9 +13,9 @@ task :watch do
 end
 
 namespace :tasks do
-  #task('01') { Rake::Task['tasks:run'].execute('01') }
+  task('01') { Rake::Task['tasks:run'].execute('01') }
   #task('02') { Rake::Task['tasks:run'].execute('02') }
-  task('03') { Rake::Task['tasks:run'].execute('03') }
+  #task('03') { Rake::Task['tasks:run'].execute('03') }
 
   task :run, :task_id do |t, arg|
     index = arg
